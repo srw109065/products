@@ -4,6 +4,7 @@ while True:
 	if name == 'q':
 		break
 	price = input("請輸入商品價格: ")
+	price = int(price)
 	#原始方式
 	#p = []
 	#p.append(name)
@@ -19,7 +20,7 @@ for p in products:
 #寫入Text
 with open('products.csv', 'w') as f:
 	for p in products:
-		f.write(p[0] + ',' +'的價格是:' + ',' + p[1] + '元' + '\n')
+		f.write(p[0] + ',' +'的價格是:' + ',' + str(p[1]) + '元' + '\n')
 #讀取Text
 k = []
 with open('products1.txt', 'r') as f:
