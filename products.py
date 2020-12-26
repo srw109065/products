@@ -13,6 +13,17 @@ while True:
 	#更快速的方式
 	products.append([name, price])
 print(products)
-
+#把清單一個一個 拿出來打印
 for p in products:
 	print(p[0], '的價格是', p[1], '元')
+#寫入Text
+with open('products.csv', 'w') as f:
+	for p in products:
+		f.write(p[0] + ',' +'的價格是:' + ',' + p[1] + '元' + '\n')
+#讀取Text
+k = []
+with open('products1.txt', 'r') as f:
+	for p in f:
+		print(p.strip())
+		k.append(p.strip())
+print(k)
