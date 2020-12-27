@@ -18,9 +18,10 @@ print(products)
 for p in products:
 	print(p[0], '的價格是', p[1], '元')
 #寫入Text
-with open('products.csv', 'w') as f:
+with open('products.csv', 'w', encoding='utf-8') as f: #encoding 解決編碼無法顯示中文
+	f.write('商品,價格\n') #用來增加Excel 欄位名稱
 	for p in products:
-		f.write(p[0] + ',' +'的價格是:' + ',' + str(p[1]) + '元' + '\n')
+		f.write(p[0] + ',' + str(p[1]) + '\n')
 #讀取Text
 k = []
 with open('products1.txt', 'r') as f:
